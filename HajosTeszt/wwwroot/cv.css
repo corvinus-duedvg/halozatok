@@ -1,0 +1,33 @@
+﻿body { 
+}
+h1 {
+    font-style:italic;
+    font-size:xx-large;
+    text-align:center;
+}
+h2{
+    font-size:x-large;
+    text-align:center
+}
+a{
+    padding:10px;
+    background-color:steelblue;
+    color:white;
+    margin:15px;
+    border-radius:15px
+}
+p.cvtitle{font-weight:700; font-size:larger; margin:0px}
+p.cvdate{font-style:italic; font-size:larger; margin:0px}
+p.cvother{margin:0px}
+div.container {
+    background-image: url(backimage.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius:15px;
+}
+div.chapter{
+    background:rgba(0,0,0,0.1);
+    border-radius:15px;
+    border-color:black;
+    border:groove;
+}
