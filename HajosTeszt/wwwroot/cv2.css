@@ -1,0 +1,120 @@
+﻿body {
+    text-align: center;
+    margin: 0px;
+}
+
+div.chapter {
+    border-radius: 15px;
+    border-color: black;
+    border: groove;
+    margin-bottom: 10px;
+    background: rgb(248 248 248 / 0.80);
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: left;
+}
+
+h2 {
+    font-size: x-large;
+    text-align: left;
+}
+
+img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+p.cvtitle {
+    font-weight: 700;
+    font-size: larger;
+}
+
+p.cvdate {
+    font-style: italic;
+    font-size: larger;
+}
+
+#article,
+#aside,
+#footer,
+#header,
+#nav {
+    padding: 20px;
+}
+
+#header {
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-around;
+}
+
+#nav {
+    background-color:darkgray;
+}
+
+#article {
+    text-align: left;
+    background-image: url(backimage.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+    #article p {
+        margin: 20px;
+    }
+
+    #article h2 {
+        margin: 10px;
+    }
+
+#aside {
+    background-color: darkgray;
+}
+
+#footer {
+    background-color: gainsboro;
+}
+
+#nav {
+    display: flex;
+}
+
+    #nav a {
+        flex: 1 1 auto;
+        text-decoration: none;
+        color: black;
+    }
+
+/* 800px-nél nagyobb képernyő*/
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nav,
+    #header {
+        order: -1;
+    }
+
+    #article {
+        flex: 1 1 75%;
+    }
+
+    #aside {
+        flex: 1 1 25%;
+    }
+}
