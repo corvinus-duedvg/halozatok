@@ -1,0 +1,11 @@
+﻿.sor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.elem {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
