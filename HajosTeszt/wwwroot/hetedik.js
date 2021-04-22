@@ -1,40 +1,61 @@
-﻿var kérdések;
-var index = 0;
-window.onload = download();
-window.onload = makeclickable();
-function download() {
-    fetch('/questions.json')
-        .then(response => response.json())
-        .then(data => downloadEnd(data))
-};
-function downloadEnd(d){
-    console.log("Sikeres letöltés")
-    console.log(d)
-    kérdések = d;
-    showquestion(index);
-};
+﻿index = 1;
+var correctAnswer;
 
-function showquestion(q) {
-    let qbox = document.getElementById("kérdés_szöveg");
-    qbox.innerText= kérdések[q].questionText;
-    let abox1 = document.getElementById("válasz1");
-    abox1.innerText = kérdések[q].answer1;
-    let abox2 = document.getElementById("válasz2");
-    abox2.innerText = kérdések[q].answer2;
-    let abox3 = document.getElementById("válasz3");
-    abox3.innerText = kérdések[q].answer3;
-    let ibox = document.getElementById("kép1");
-    ibox.src = `https://szoft1.comeback.hu/hajo/${kérdések[q].image}`;
+
+window.onload = download(1);
+window.onload = function () {
+
+    let clickablef = document.getElementById("előre");
+    clickablef.onclick = function () {
+        index = index + 1;
+        questionLoad(index);
+    }
+    let clickableb = document.getElementById("vissza");
+    clickableb.onclick = function () {
+        index = index - 1;
+        questionLoad(index);
+    }
+
+
+
+}
+function download(id) {
+    fetch(`/questions/${id}`)
+        .then(response => response.json())
+        .then(data => showquestion(data))
 };
+function showquestion(q) {
+    console.log(q);
+    document.getElementById("kérdés_szöveg").innerText = q.questionText
+    document.getElementById("válasz1").innerText = q.answer1
+    document.getElementById("válasz2").innerText = q.answer2
+    document.getElementById("válasz3").innerText = q.answer3
+    document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + q.image;
+    correctAnswer = q.correctAnswer;
+
+
+}
+function questionLoad(id) {
+    fetch(`/questions/${id}`)
+        .then(response => {
+            if (!response.ok) {
+                console.error(`Hibás válasz: $(response.status)`)
+            }
+            else {
+                return response.json()
+            }
+        })
+    .then(data=>showquestion(data))
+}
 function makeclickable() {
     let clickablef = document.getElementById("előre");
-    clickablef.click(function () {
+    clickablef.onclick = function () {
         index = index + 1;
-        showquestion(index);
-    })
+        questionLoad(index);
+    }
     let clickableb = document.getElementById("vissza");
     clickableb.click(function () {
         index = index -1;
-        showquestion(index);
+        questionLoad(index);
     })
 };
