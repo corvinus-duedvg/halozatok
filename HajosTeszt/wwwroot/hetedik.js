@@ -1,23 +1,13 @@
-﻿index = 1;
+﻿var id = 1;
 var correctAnswer;
 
 
 window.onload = download(1);
 window.onload = function () {
-
-    let clickablef = document.getElementById("előre");
-    clickablef.onclick = function () {
-        index = index + 1;
-        questionLoad(index);
-    }
-    let clickableb = document.getElementById("vissza");
-    clickableb.onclick = function () {
-        index = index - 1;
-        questionLoad(index);
-    }
-
-
-
+    console.log("Oldal betöltve");
+    document.getElementById("előre").onclick = előre;
+    document.getElementById("vissza").onclick = vissza;
+    questionLoad(id);
 }
 function download(id) {
     fetch(`/questions/${id}`)
@@ -30,8 +20,17 @@ function showquestion(q) {
     document.getElementById("válasz1").innerText = q.answer1
     document.getElementById("válasz2").innerText = q.answer2
     document.getElementById("válasz3").innerText = q.answer3
-    document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + q.image;
     correctAnswer = q.correctAnswer;
+    if (q.image) {
+        document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + q.image;
+        document.getElementById("kép1").classList.remove("rejtett")
+    }
+    else {
+        document.getElementById("kép1").classList.add("rejtett")
+    }
+    document.getElementById("válasz1").classList.remove("jó", "rossz");
+    document.getElementById("válasz2").classList.remove("jó", "rossz");
+    document.getElementById("válasz3").classList.remove("jó", "rossz");
 
 
 }
@@ -47,15 +46,11 @@ function questionLoad(id) {
         })
     .then(data=>showquestion(data))
 }
-function makeclickable() {
-    let clickablef = document.getElementById("előre");
-    clickablef.onclick = function () {
-        index = index + 1;
-        questionLoad(index);
-    }
-    let clickableb = document.getElementById("vissza");
-    clickableb.click(function () {
-        index = index -1;
-        questionLoad(index);
-    })
-};
+function előre() {
+    id++;
+    questionLoad(id);
+}
+function vissza() {
+    id--;
+    questionLoad(id);
+}
