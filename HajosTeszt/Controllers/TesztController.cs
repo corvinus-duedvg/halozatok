@@ -13,7 +13,7 @@ namespace HajosTeszt.Controllers
     {
         [HttpGet]
         [Route("corvinus/szerverido")]
-        public IActionResult M1()
+        public IActionResult M100()
         {
             string pontosIdő = DateTime.Now.ToShortTimeString();
 
@@ -25,7 +25,7 @@ namespace HajosTeszt.Controllers
         }
         [HttpGet]
         [Route("corvinus/nagybetus/{szoveg}")]
-        public IActionResult M2(string szoveg)
+        public IActionResult M200(string szoveg)
         {
             return new ContentResult
             {

@@ -14,7 +14,7 @@ namespace HajosTeszt.Controllers
     {
         [HttpGet]
         [Route("questions/all")]
-        public ActionResult M1()
+        public ActionResult M10()
         {
             hajostesztContext context = new hajostesztContext();
             var kérdések = from x in context.Questions select x.QuestionText;
