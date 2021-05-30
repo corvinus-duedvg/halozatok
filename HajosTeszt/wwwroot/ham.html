@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="hamstyle.css" rel="stylesheet" />
+    <script src="hamscript.js"></script>
+    <title>Prosciutto crud(e)o</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="title">
+            <h1>Prosciutto C.R.U.D(E)O.</h1>
+        </div>
+        <div id="middle">
+            <div id="col1" class="column">
+                <h2>C(reate)</h2>
+                <p>Végpont: /api/ham</p><br><br>
+                <input id="cid" type="text" disabled /><br><br>
+                <input id="cpname" type="text" /><br><br>
+                <input id="cmname" type="text" /><br><br>
+                <input id="cpdo" type="text" /><br><br>
+                <div id="buttonbar">
+                    <div id="createsingle" class="divbut"> Hozzáadás </div>
+                </div>
+            </div>
+            <div id="col2" class="column">
+                <h2>R(ead)</h2>
+                <p>Végpont:<br><br>/api/ham és /api/ham/5</p>
+                <input id="rid" type="text" value="pl. 1" /><br><br>
+                <div id="buttonbar">
+                    <div id="readsingle" class="divbut"> Keresés </div>
+                    <div id="readall" class="divbut"> Összes </div>
+                </div>
+            </div>
+            <div id="col3" class="column">
+                <h2>U(pdate)</h2>
+                <p>Végpont: /api/ham</p><br><br>
+                <input id="uid" type="text" disabled /><br><br>
+                <input id="upname" type="text" disabled /><br><br>
+                <input id="umname" type="text" disabled /><br><br>
+                <input id="updo" type="text" disabled /><br><br>
+                <div id="buttonbar">
+                    <div id="updatesingle" class="divbut"> Frissítés </div>
+                </div>
+            </div>
+            <div id="col4" class="column">
+                <h2>D(Elete)O</h2>
+                <p>Végpont: /api/ham/5</p><br><br>
+                <input id="did" type="text" value="pl. 1" /><br><br>
+                <input id="dpname" type="text" disabled /><br><br>
+                <input id="dmname" type="text" disabled /><br><br>
+                <input id="dpdo" type="text" disabled /><br><br>
+                <div id="buttonbar">
+                    <div id="deletesingle" class="divbut"> Törlés </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottomtitle">
+            <h1>Sonkák</h1>
+        </div>
+        <div id="bottom">
+
+        </div>
+    </div>
+</body>
+</html>

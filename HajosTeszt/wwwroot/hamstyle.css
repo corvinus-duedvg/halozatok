@@ -1,0 +1,75 @@
+﻿html, body {
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: darksalmon;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#title, #middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#col1, #col2, #col3, #col4 {
+    display: flex;
+    min-width: 100px;
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    background-color: lightsalmon;
+    border-radius: 10px
+}
+
+#buttonbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+#bottomtitle {
+    display: flex;
+    justify-content: center;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.hcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: stretch;
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+    background-color: lightsalmon;
+    border-radius: 10px
+}
+
+.smallcontainer {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    background-color: salmon;
+    border-radius: 10px
+}
+
+.divbut {
+    margin: 5px;
+    padding: 10px;
+    border: 1px inset;
+    background-color: salmon
+}
+
+#updatesingle, #uid, #upname, #umname, #updo {
+    background-color: lightgray;
+}
